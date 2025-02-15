@@ -1,0 +1,104 @@
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+
+# Directorios de construcción
+/target/
+/out/
+/build/
+
+# Archivos de dependencias
+/.classpath
+/.project
+/.settings/
+/.mvn/
+**/node_modules/
+
+# Archivos del IDE (Eclipse, IntelliJ, VSCode)
+/.idea/
+/*.iml
+/.vscode/
+/*.log
+
+# Archivos de sistema
+*.DS_Store
+*.class
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# Archivos de configuración de Maven
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+dependency-reduced-pom.xml
+release.properties
+
+# Archivos de Gradle
+.gradle/
+/gradle/
+/build/
+!gradle-wrapper.jar
+*.lock
+*.bat
+
+# Archivos de caché y logs
+*.log
+*.cache
+*.pid
+hs_err_pid*
+
+# Archivos sensibles
+application.properties
+application.yml
+.env
+*.key
+*.pem
+*.crt
+*.p12
+*.jks
+
+# Archivos de test y cobertura
+/test-output/
+/jacoco/
+/coverage/
+
+# Archivos generados por Docker
+docker-compose.override.yml
+.dockerignore
+
+# Archivos de CI/CD
+/.github/
+.ci/
+.circleci/
