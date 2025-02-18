@@ -29,10 +29,10 @@ public class SecurityConfig{
 		requestHandler.setCsrfRequestAttributeName("_csrf");
 		http.authorizeHttpRequests(auth -> auth
 				//.requestMatchers("/loans","/balance","/accounts", "/cards").authenticated()
-				.requestMatchers("/loans").hasAuthority("VIEW_LOANS")
-				.requestMatchers("/balance").hasAuthority("VIEW_BALANCE")
-				.requestMatchers("/cards").hasAuthority("VIEW_CARDS")
-				.requestMatchers("/accounts").hasAnyAuthority("VIEW_ACCOUNT","VIEW_CARDS")
+				.requestMatchers("/loans").hasRole("LOANS")
+				.requestMatchers("/balance").hasRole("BALANCE")
+				.requestMatchers("/cards").hasRole("CARDS")
+				.requestMatchers("/accounts").hasAnyRole("ACCOUNT")
 				.anyRequest().permitAll())
 			.formLogin(Customizer.withDefaults())
 			.httpBasic(Customizer.withDefaults());
