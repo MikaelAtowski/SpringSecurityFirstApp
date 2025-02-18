@@ -1,8 +1,15 @@
 package com.example.security.entity;
 
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Data;
 
@@ -10,15 +17,21 @@ import lombok.Data;
 @Table(name = "customers")
 @Data
 public class CustomerEntity {
+
 	@Id
-	@Column(name = "id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
 	@Column(name = "email")
 	private String email;
+	
 	@Column(name = "pwd")
 	private String password;
-	@Column(name = "rol")
-	private String role;
+	
+	@OneToMany(fetch = FetchType.EAGER)
+	@JoinColumn(name = "id_customer")
+	private List<RoleEntity> roles;
+	
 	public Long getId() {
 		return id;
 	}
@@ -37,10 +50,10 @@ public class CustomerEntity {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getRole() {
-		return role;
+	public List<RoleEntity> getRoles() {
+		return roles;
 	}
-	public void setRole(String role) {
-		this.role = role;
+	public void setRoles(List<RoleEntity> roles) {
+		this.roles = roles;
 	}
 }
